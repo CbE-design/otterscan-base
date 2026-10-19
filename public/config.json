@@ -1,4 +1,3 @@
 {
-  "erigonURL": "http://localhost:8545",
-  "assetsURLPrefix": "http://localhost:5175"
+  "erigonURL": "https://base-mainnet.apex-crypto.co.uk"
 }
