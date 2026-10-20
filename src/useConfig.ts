@@ -294,7 +294,10 @@ export const loadOtterscanConfig = async (): Promise<OtterscanConfig> => {
     // Override config for local dev
     const config: OtterscanConfig = { ...data };
     if (import.meta.env.DEV) {
-      config.erigonURL = import.meta.env.VITE_ERIGON_URL ?? config.erigonURL;
+      config.erigonURL =
+        import.meta.env.VITE_RPC_URL ??
+        import.meta.env.VITE_ERIGON_URL ??
+        config.erigonURL;
       config.beaconAPI =
         import.meta.env.VITE_BEACON_API_URL ?? config.beaconAPI;
       config.assetsURLPrefix =

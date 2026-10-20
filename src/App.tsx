@@ -36,7 +36,6 @@ import { ChainInfoContext, populateChainInfo } from "./useChainInfo";
 import { loadOtterscanConfig, OtterscanConfig } from "./useConfig";
 import { getBalanceQuery, getCodeQuery, hasCodeQuery } from "./useErigonHooks";
 import { createRuntime, RuntimeContext } from "./useRuntime";
-import WarningHeader from "./WarningHeader";
 
 const Block = lazy(() => import("./execution/Block"));
 const BlockTransactions = lazy(() => import("./execution/BlockTransactions"));
@@ -253,7 +252,6 @@ const Layout: FC = () => {
                     >
                       <AppConfigContext.Provider value={appConfig}>
                         <div className="flex h-screen flex-col">
-                          <WarningHeader />
                           <Outlet />
                           <Footer />
                         </div>

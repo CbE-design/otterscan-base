@@ -19,12 +19,12 @@ const ConnectionErrorPanel: FC<ConnectionErrorPanelProps> = ({
   return (
     <div className="flex h-screen flex-col bg-gray-300 font-sans">
       <div className="min-w-lg m-auto h-60 max-w-lg text-lg text-gray-700">
-        <Step type="wait" msg="Trying to connect to Erigon node..." />
+        <Step type="wait" msg="Trying to connect to the Base Mainnet RPC endpoint..." />
         <div className="flex space-x-2">
           <span className="ml-7 text-base">{nodeURL}</span>
         </div>
         {connStatus === ConnectionStatus.NOT_ETH_NODE && (
-          <Step type="error" msg="It does not seem to be an ETH node">
+          <Step type="error" msg="The endpoint does not appear to be an Ethereum RPC">
             <p>Make sure your browser can access the URL above.</p>
             <p>
               If you want to customize the Erigon rpcdaemon endpoint, please
@@ -43,8 +43,8 @@ const ConnectionErrorPanel: FC<ConnectionErrorPanelProps> = ({
         )}
         {connStatus === ConnectionStatus.NOT_ERIGON && (
           <>
-            <Step type="ok" msg="It is an ETH node" />
-            <Step type="error" msg="It does not seem to be an Erigon node">
+            <Step type="ok" msg="Ethereum RPC detected" />
+            <Step type="error" msg="The endpoint does not expose the explorer RPC methods">
               Make sure you rpcdaemon with Otterscan patches is up and running
               and the <strong>erigon_</strong> namespace is enabled according to
               the{" "}
@@ -62,7 +62,7 @@ const ConnectionErrorPanel: FC<ConnectionErrorPanelProps> = ({
         )}
         {connStatus === ConnectionStatus.NOT_OTTERSCAN_PATCHED && (
           <>
-            <Step type="ok" msg="It is an Erigon node" />
+            <Step type="ok" msg="Explorer RPC methods detected" />
             <Step
               type="error"
               msg="It does not seem to contain up-to-date Otterscan patches"
