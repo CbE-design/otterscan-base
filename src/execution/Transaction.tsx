@@ -32,6 +32,7 @@ const Transaction: FC = () => {
     <SelectedTransactionContext.Provider value={txData}>
       <BlockNumberContext.Provider value={txData?.confirmedData?.blockNumber}>
         <StandardFrame>
+          <div className="explorer-breadcrumb">Base Mainnet <span>/</span> Transaction</div>
           <StandardSubtitle>Transaction Details</StandardSubtitle>
           {txData === null && (
             <ContentFrame>

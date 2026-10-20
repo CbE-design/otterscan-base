@@ -19,7 +19,7 @@ const Header: FC = () => {
   return (
     <>
       {isScanning && <CameraScanner turnOffScan={() => setScanning(false)} />}
-      <header className="border-b border-slate-800/80 bg-slate-950/95 px-3 py-3 text-slate-100 shadow-[0_1px_0_rgba(56,189,248,0.08)] backdrop-blur sm:px-6 lg:px-10">
+      <header className="explorer-header border-b border-slate-800/80 bg-slate-950/95 px-3 py-3 text-slate-100 backdrop-blur sm:px-6 lg:px-10">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-row justify-between sm:self-center items-center w-full sm:w-auto shrink-0 mr-2">
           <Link className="self-center" to="/">
