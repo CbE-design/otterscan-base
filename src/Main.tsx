@@ -7,12 +7,14 @@ import ErrorFallback from "./components/ErrorFallback";
 const Main: React.FC = () => {
   return (
     <>
-      <Header />
+      <div className="min-h-screen bg-slate-950 text-slate-100">
+        <Header />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Suspense fallback={<div className="w-screen h-screen"></div>}>
           <Outlet />
         </Suspense>
       </ErrorBoundary>
+      </div>
     </>
   );
 };

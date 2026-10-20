@@ -71,6 +71,17 @@
 }
 
 @layer base {
+  html {
+    color-scheme: dark;
+    background: #020617;
+  }
+
+  body {
+    margin: 0;
+    background: #020617;
+    color: #e2e8f0;
+  }
+
   :root {
     --color-button-fill: 244 244 245; /* gray-100 */
     --color-button-hover-fill: 228 228 231; /* gray-200 */
