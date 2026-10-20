@@ -33,7 +33,7 @@ const Header: FC = () => {
                 title="An otter scanning"
               />
               <span>
-                {config.branding?.siteName || "Otterscan"}
+                {config.branding?.siteName || "Base Mainnet Explorer"}
                 {config.experimental && <span className="text-red-400">2</span>}
               </span>
             </div>

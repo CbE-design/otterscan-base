@@ -44,7 +44,7 @@ const Transaction: FC = () => {
           {txData && (
             <StandardSelectionBoundary>
               <TabGroup>
-                <TabList className="flex flex-wrap gap-1 rounded-t-xl border border-slate-800 bg-slate-900/80 p-1 shadow-lg">
+                <TabList aria-label="Transaction detail sections" className="flex flex-wrap gap-1 rounded-t-xl border border-slate-800 bg-slate-900/80 p-1 shadow-lg">
                   <NavTab href="..">Overview</NavTab>
                   {txData.confirmedData?.blockNumber !== undefined && (
                     <NavTab href="../logs">
