@@ -71,14 +71,30 @@
 }
 
 @layer base {
+  html {
+    color-scheme: dark;
+    background: #020617;
+  }
+
+  body {
+    margin: 0;
+    background: #020617;
+    color: #e2e8f0;
+    font-family: Roboto, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  button, input, select, textarea { font: inherit; }
+
+  a { transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease; }
+
   :root {
     --color-button-fill: 244 244 245; /* gray-100 */
     --color-button-hover-fill: 228 228 231; /* gray-200 */
     --color-button-text: 113 113 122; /* gray-500 */
 
-    --color-from-border: 254 226 226;
-    --color-from-text: 220 38 38;
-    --color-from-fill: 254 242 242;
+    --color-from-border: 125 211 252;
+    --color-from-text: 14 116 144;
+    --color-from-fill: 224 242 254;
     --color-to-fill: 236 253 245;
 
     --color-table-row-hover: 243 244 246;
@@ -108,6 +124,15 @@
   video {
     @apply dark-no-invert;
   }
+}
+
+@layer components {
+  .explorer-app { min-height: 100vh; background: radial-gradient(circle at 50% -20%, rgba(37, 99, 235, .14), transparent 42%), #020617; }
+  .explorer-content { min-height: calc(100vh - 82px); }
+  .explorer-header { box-shadow: 0 1px 0 rgba(59, 130, 246, .12), 0 12px 40px rgba(2, 6, 23, .24); }
+  .explorer-breadcrumb { margin-bottom: 0.75rem; color: #64748b; font-size: 0.72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .explorer-breadcrumb span { margin: 0 .45rem; color: #334155; }
+  .standard-frame, .content-frame { border-color: rgb(30 41 59 / .9); background: rgb(15 23 42 / .72); box-shadow: 0 12px 35px rgb(2 6 23 / .2); }
 }
 
 @utility input-number-no-arrows {

@@ -32,6 +32,7 @@ const Transaction: FC = () => {
     <SelectedTransactionContext.Provider value={txData}>
       <BlockNumberContext.Provider value={txData?.confirmedData?.blockNumber}>
         <StandardFrame>
+          <div className="explorer-breadcrumb">Base Mainnet <span>/</span> Transaction</div>
           <StandardSubtitle>Transaction Details</StandardSubtitle>
           {txData === null && (
             <ContentFrame>
@@ -44,7 +45,7 @@ const Transaction: FC = () => {
           {txData && (
             <StandardSelectionBoundary>
               <TabGroup>
-                <TabList className="flex space-x-2 rounded-t-lg border-l border-r border-t bg-white">
+                <TabList aria-label="Transaction detail sections" className="flex flex-wrap gap-1 rounded-t-xl border border-slate-800 bg-slate-900/80 p-1 shadow-lg">
                   <NavTab href="..">Overview</NavTab>
                   {txData.confirmedData?.blockNumber !== undefined && (
                     <NavTab href="../logs">

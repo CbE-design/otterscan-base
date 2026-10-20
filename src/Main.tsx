@@ -7,12 +7,16 @@ import ErrorFallback from "./components/ErrorFallback";
 const Main: React.FC = () => {
   return (
     <>
-      <Header />
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Suspense fallback={<div className="w-screen h-screen"></div>}>
-          <Outlet />
-        </Suspense>
-      </ErrorBoundary>
+      <div className="explorer-app min-h-screen bg-slate-950 text-slate-100">
+        <Header />
+        <main className="explorer-content">
+          <ErrorBoundary FallbackComponent={ErrorFallback}>
+            <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center text-sm text-slate-400">Loading Base Mainnet data…</div>}>
+              <Outlet />
+            </Suspense>
+          </ErrorBoundary>
+        </main>
+      </div>
     </>
   );
 };

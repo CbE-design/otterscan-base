@@ -6,7 +6,7 @@ const WarningHeader: React.FC = () => {
   const { provider } = useContext(RuntimeContext);
   const { name } = useChainInfo();
   const chainId = provider._network.chainId;
-  if (chainId === 1n) {
+  if (chainId === 1n || chainId === 8453n) {
     return <></>;
   }
 
@@ -45,7 +45,7 @@ const WarningHeader: React.FC = () => {
 
   return (
     <div
-      className="w-full bg-orange-400 px-2 py-1 text-center font-bold text-white dark:text-gray-900"
+      className="w-full border-b border-cyan-400/20 bg-slate-900 px-2 py-1 text-center text-xs font-semibold text-cyan-300"
       data-test="warning-header-network-name"
     >
       You are on {chainMsg}
