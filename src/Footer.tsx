@@ -7,13 +7,9 @@ const Footer: React.FC = () => {
   return (
     <>
       <div
-        className={`w-full border-t border-t-gray-100 px-2 py-1 text-xs ${
-          provider._network.chainId === 1n
-            ? "bg-link-blue dark:bg-link-blue-light text-gray-200 dark:text-gray-800"
-            : "bg-orange-400 text-white dark:text-gray-900"
-        } text-center`}
+        className="w-full border-t border-t-slate-200 bg-slate-50 px-2 py-2 text-center text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400"
       >
-        Using Erigon node at {config.erigonURL}
+        Base Mainnet · RPC endpoint {config.erigonURL}
       </div>
     </>
   );
